@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sel.css">
+    <title>Character Select</title>
+</head>
+<body>
+    <header>
+        <h1>Choose Your Character</h1>
+    </header>
+
+    <main>
+        <section class="player1-section">
+            <h2>   Player 1</h2>
+            <section class="character">
+                <img src="pics/earth.jpg" alt="Tank">
+                <h3>Tank</h3>
+                <button onclick="selectCharacter('Player1', 'Tank')">Select</button>
+            </section>
+            <section class="character">
+                <img src="pics/fire.jpg" alt="Flame">
+                <h3>Flame</h3>
+                <button onclick="selectCharacter('Player1', 'Flame')">Select</button>
+            </section>
+            <section class="character">
+                <img src="pics/shadow.jpg" alt="Shadow">
+                <h3>Shadow</h3>
+                <button onclick="selectCharacter('Player1', 'Shadow')">Select</button>
+            </section>
+            <section class="character">
+                <img src="pics/defult.png" alt="Default">
+                <h3>Default</h3>
+                <button onclick="selectCharacter('Player1', 'Default')">Select</button>
+            </section>
+        </section>
+
+        <section class="player2-section">
+            <h2>Player 2</h2>
+            <section class="character">
+                <img src="pics/earth.jpg" alt="Tank">
+                <h3>Tank</h3>
+                <button onclick="selectCharacter('Player2', 'Tank')">Select</button>
+            </section>
+            <section class="character">
+                <img src="pics/fire.jpg" alt="Flame">
+                <h3>Flame</h3>
+                <button onclick="selectCharacter('Player2', 'Flame')">Select</button>
+            </section>
+            <section class="character">
+                <img src="pics/shadow.jpg" alt="Shadow">
+                <h3>Shadow</h3>
+                <button onclick="selectCharacter('Player2', 'Shadow')">Select</button>
+            </section>
+            <section class="character">
+                <img src="pics/defult.png" alt="Default">
+                <h3>Default</h3>
+                <button onclick="selectCharacter('Player2', 'Default')">Select</button>
+            </section>
+        </section>
+    </main>
+
+    <script src="character_select.js"></script>
+</body>
+</html>

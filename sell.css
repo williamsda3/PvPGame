@@ -1,0 +1,84 @@
+@Import Url('Https://Fonts.Googleapis.Com/Css2?Family=Nunito&Display=Swap');
+* {
+Margin: 0;
+Padding: 0;
+Box-Sizing: Inherit;
+}
+Html {
+Font-Size: 62.5%;
+Box-Sizing: Border-Box;
+}
+Body {
+Font-Family: 'Nunito', Sans-Serif;
+Font-Weight: 400;
+Height: 100vh;
+Color: #333;
+Background-Image: Linear-Gradient(To Top Left, #368182 15%, #f4d58d 100%);
+Display: Flex;
+Align-Items: Center;
+Justify-Content: Center;
+}
+section{
+    position: flex;
+   
+}
+/* LAYOUT */
+Main {
+Position: Relative;
+Width: 130rem;
+Height: 70rem;
+Background-Color: #fff;
+Backdrop-Filter: Blur(200px);
+Filter: Blur();
+Box-Shadow: 0 3rem 5rem Rgba(0, 0, 0, 0.25);
+Border-Radius: 9px;
+Overflow: Hidden;
+Display: Flex;
+}
+.Player {
+Flex: 50%;
+Padding: 9rem;
+Display: Flex;
+Flex-Direction: Column;
+Align-Items: Center;
+Transition: All 0.75s;
+font-family: 'Nunito', Sans-Serif;;
+}
+/* ELEMENTS */
+.Name {
+Position: Relative;
+Font-Size: 4rem;
+Text-Transform: Uppercase;
+Letter-Spacing: 1px;
+Word-Spacing: 2px;
+Font-Weight: 100;
+Margin-Bottom: 1rem;
+}
+img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+  }
+  
+.Current {
+Background-Color: #ffe6a7;
+Opacity: 0.8;
+Border-Radius: 9px;
+Color: #Fff;
+Width: 65%;
+Padding: 2rem;
+Text-Align: Center;
+Transition: All 0.75s;
+}
+.Current-Label {
+Text-Transform: Uppercase;
+Margin-Bottom: 1rem;
+Font-Size: 1.7rem;
+Color: #Ddd;
+}
+.Current-Score {
+Font-Size: 3.5rem;
+}
+
+
+

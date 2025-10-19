@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+    height: 100vh;
+    color: #333;
+    Align-Items: Center;
+
+    Background-Image: Linear-Gradient(To Top Left, #368182 15%, #f4d58d 100%);
+
+}
+
+img {
+    width:64px;
+  
+    max-width: 70px;
+  }
+    /* ... Previous styles ... */
+
+/* LAYOUT */
+main {
+    position: relative;
+    width: 130rem;
+    height: 70rem;
+    background-color: #fff;
+    backdrop-filter: blur(200px);
+    filter: blur();
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
+    align-items: center; /* Center vertically */
+    margin: 0 auto; /* Center horizontally */
+    justify-content: center;
+    
+}
+
+
+/* Center the "Choose Your Character" heading */
+header {
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+
+.character {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 2rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.character:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.character img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.character h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Additional styling for overlay */
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* ... Rest of your styles ... */

@@ -1,0 +1,93 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+    <h1>Rock, Paper, Scissors</h1>
+    <button onclick="createGame()">Create Game</button>
+    <button onclick="joinGame()">Join Game</button>
+    <div id="gameIdDiv" style="display: none;">
+        <label for="lobbyCode">Enter Lobby Code:</label>
+        <input type="text" id="lobbyCode">
+        <button onclick="joinGameByCode()">Join Game</button>
+    </div>
+    <div id="movesDiv" style="display: none;">
+        <h2>Make your move:</h2>
+        <button onclick="makeMove('rock')">Rock</button>
+        <button onclick="makeMove('paper')">Paper</button>
+        <button onclick="makeMove('scissors')">Scissors</button>
+        <button onclick="getResult()">Get Result</button>
+    </div>
+    <div id="resultDiv" style="display: none;">
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        let playerId;
+        let lobbyCode;
+        let gameId;
+
+        function createGame() {
+            playerId = prompt('Enter your player ID:');
+            lobbyCode = prompt('Enter Lobby Code:');
+            fetch('/create_game', {
+                method: 'POST',
+                body: new URLSearchParams({ player_id: playerId, lobby_code: lobbyCode }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                gameId = data.game_id;
+                document.getElementById('gameIdDiv').style.display = 'none';
+                document.getElementById('movesDiv').style.display = 'block';
+            });
+        }
+
+        function joinGame() {
+            playerId = prompt('Enter your player ID:');
+            gameId = '';
+            document.getElementById('gameIdDiv').style.display = 'block';
+        }
+
+        function joinGameByCode() {
+            lobbyCode = document.getElementById('lobbyCode').value;
+            fetch('/join_game', {
+                method: 'POST',
+                body: new URLSearchParams({ player_id: playerId, lobby_code: lobbyCode }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message));
+            document.getElementById('movesDiv').style.display = 'block';
+
+        }
+
+        function makeMove(move) {
+            fetch('/make_move', {
+                method: 'POST',
+                body: new URLSearchParams({ player_id: playerId, game_id: gameId, move: move }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(response => response.json())
+            .then(data => alert(data.message));
+        }
+
+        function getResult() {
+            fetch('/get_result', {
+                method: 'POST',
+                body: new URLSearchParams({ player_id: playerId, game_id: gameId }),
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('result').innerText = data.result;
+                document.getElementById('resultDiv').style.display = 'block';
+            });
+        }
+    </script>
+</body>
+</html>
